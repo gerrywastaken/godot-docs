@@ -149,17 +149,21 @@ It is possible to rotate a transform, either by multiplying its basis by another
 .. tabs::
  .. code-tab:: gdscript GDScript
 
+    var axis = Vector3(1, 0, 0) # Or Vector3.RIGHT
+    var rotation_amount = 0.1
     # Rotate the transform about the X axis
-    transform.basis = Basis(Vector3(1, 0, 0), PI) * transform.basis
+    transform.basis = Basis(axis, rotation_amount) * transform.basis
     # shortened
-    transform.basis = transform.basis.rotated(Vector3(1, 0, 0), PI)
+    transform.basis = transform.basis.rotated(axis, rotation_amount)
 
  .. code-tab:: csharp
 
+    var axis = Vector3.Right
+    var rotation_amount = 0.1
     // rotate the transform about the X axis
-    transform.basis = new Basis(Vector3.Right, Mathf.Pi) * transform.basis;
+    transform.basis = new Basis(axis, rotation_amount) * transform.basis;
     // shortened
-    transform.basis = transform.basis.Rotated(Vector3.Right, Mathf.Pi);
+    transform.basis = transform.basis.Rotated(axis, rotation_amount);
 
 A method in Spatial simplifies this:
 
