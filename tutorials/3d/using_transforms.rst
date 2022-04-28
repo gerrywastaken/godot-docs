@@ -151,7 +151,7 @@ It is possible to rotate a transform, either by multiplying its basis by another
 
     var axis = Vector3(1, 0, 0) # Or Vector3.RIGHT
     var rotation_amount = 0.1
-    # Rotate the transform about the X axis
+    # Rotate the transform about the X axis by 0.1 radians.
     transform.basis = Basis(axis, rotation_amount) * transform.basis
     # shortened
     transform.basis = transform.basis.rotated(axis, rotation_amount)
@@ -163,7 +163,7 @@ It is possible to rotate a transform, either by multiplying its basis by another
     // Rotate the transform about the X axis by 0.1 radians.
     transform.basis = new Basis(axis, rotation_amount) * transform.basis;
     // shortened
-    transform.basis = transform.basis.Rotated(axis, rotation_amount);
+    transform.basis = transform.basis.Rotated(axis, rotationAmount);
 
 A method in Spatial simplifies this:
 
@@ -171,16 +171,16 @@ A method in Spatial simplifies this:
  .. code-tab:: gdscript GDScript
 
     # Rotate the transform in X axis
-    rotate(Vector3(1, 0, 0), PI)
+    rotate(Vector3(1, 0, 0), 0.1)
     # shortened
-    rotate_x(PI)
+    rotate_x(0.1)
 
  .. code-tab:: csharp
 
     // Rotate the transform about the X axis
-    Rotate(Vector3.Right, Mathf.Pi);
+    Rotate(Vector3.RIGHT, 0.1f);
     // shortened
-    RotateX(Mathf.Pi);
+    RotateX(0.1f);
 
 This rotates the node relative to the parent node.
 
@@ -190,12 +190,12 @@ To rotate relative to object space (the node's own transform), use the following
  .. code-tab:: gdscript GDScript
 
     # Rotate locally
-    rotate_object_local(Vector3(1, 0, 0), PI)
+    rotate_object_local(Vector3(1, 0, 0), 0.1)
 
  .. code-tab:: csharp
 
     // Rotate locally
-    RotateObjectLocal(Vector3.Right, Mathf.Pi);
+    RotateObjectLocal(Vector3.Right, 0.1f);
 
 Precision errors
 ================
