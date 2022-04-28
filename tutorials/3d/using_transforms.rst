@@ -158,9 +158,9 @@ It is possible to rotate a transform, either by multiplying its basis by another
 
  .. code-tab:: csharp
 
-    var axis = Vector3.Right
-    var rotation_amount = 0.1
-    // rotate the transform about the X axis
+    Vector3 axis = new Vector3(1, 0, 0); // Or Vector3.Right
+    float rotationAmount = 0.1f;
+    // Rotate the transform about the X axis by 0.1 radians.
     transform.basis = new Basis(axis, rotation_amount) * transform.basis;
     // shortened
     transform.basis = transform.basis.Rotated(axis, rotation_amount);
